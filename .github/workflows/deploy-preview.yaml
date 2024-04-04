@@ -5,6 +5,7 @@ on:
       - main
 jobs:
   deploy_preview:
+    name: deploy
     runs-on: ubuntu-latest
     concurrency:
       group: '${{ github.head_ref }}'
@@ -13,7 +14,7 @@ jobs:
       - name: Install and configure the Koyeb CLI
         uses: koyeb-community/install-koyeb-cli@v2
         with:
-        api_token: '${{ secrets.KOYEB_API_TOKEN }}'
+          api_token: '${{ secrets.KOYEB_API_TOKEN }}'
       - name: Build and deploy the application to Koyeb
         uses: koyeb/action-git-deploy@v1
         with:
