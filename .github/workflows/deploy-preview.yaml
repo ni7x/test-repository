@@ -22,4 +22,4 @@ jobs:
           service-instance-type: 'free'
           service-name: ${{ github.head_ref }}
           service-ports: '8000:http'
-          service-routes: '/:8000'
+          service-routes: '/:8000' 
